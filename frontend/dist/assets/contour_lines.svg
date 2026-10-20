@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" fill="none">
+  <!-- Topographic Contour Lines -->
+  <g stroke="rgba(255, 255, 255, 0.07)" stroke-width="1.2" fill="none">
+    <!-- Outer ripples -->
+    <path d="M 400 0 C 450 120, 480 200, 520 280 C 560 360, 640 420, 800 480" />
+    <path d="M 460 0 C 500 110, 530 190, 570 270 C 620 350, 680 400, 800 440" />
+    <path d="M 520 0 C 560 100, 590 170, 630 250 C 670 330, 720 380, 800 400" />
+    <path d="M 580 0 C 620 90, 650 160, 690 230 C 730 300, 770 340, 800 350" />
+    <path d="M 640 0 C 670 80, 700 140, 740 210 C 770 260, 790 300, 800 310" />
+
+    <!-- Corner rings / Topographic contours -->
+    <ellipse cx="760" cy="480" rx="220" ry="180" transform="rotate(-15 760 480)" />
+    <ellipse cx="770" cy="490" rx="190" ry="150" transform="rotate(-15 770 490)" />
+    <ellipse cx="780" cy="500" rx="160" ry="120" transform="rotate(-15 780 500)" />
+    <ellipse cx="790" cy="510" rx="130" ry="90" transform="rotate(-15 790 510)" />
+    <ellipse cx="800" cy="520" rx="100" ry="65" transform="rotate(-15 800 520)" />
+    <ellipse cx="810" cy="530" rx="70" ry="40" transform="rotate(-15 810 530)" />
+
+    <!-- Center organic curves -->
+    <path d="M 300 600 C 420 520, 520 480, 600 530 C 680 580, 740 590, 800 560" />
+    <path d="M 350 600 C 450 540, 540 510, 620 550 C 690 590, 750 600, 800 590" />
+    <path d="M 250 600 C 380 500, 480 440, 580 500 C 660 550, 720 560, 800 520" />
+    <path d="M 200 600 C 340 470, 440 400, 550 460 C 640 510, 710 520, 800 480" />
+
+    <!-- Upper loop contours -->
+    <path d="M 650 0 C 720 80, 770 120, 800 130" />
+    <path d="M 700 0 C 750 60, 780 90, 800 95" />
+    <path d="M 750 0 C 780 40, 795 60, 800 65" />
+  </g>
+</svg>
