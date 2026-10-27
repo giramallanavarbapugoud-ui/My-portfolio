@@ -655,15 +655,23 @@ section {
   align-items: center;
   position: relative;
   width: 100%;
+  height: 560px;
   min-height: 560px;
   user-select: none;
+  overflow: visible;
+  margin: 0 auto;
 }
 
 .skills-orbit-stage {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 620px;
   height: 560px;
-  margin: 0 auto;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center center;
+  flex-shrink: 0;
+  pointer-events: auto;
 }
 
 /* Concentric Orbit Rings */
@@ -770,14 +778,15 @@ section {
 }
 
 .orbit-skill-pill:hover {
-  transform: scale(1.08) translateY(-2px);
+  transform: translate(-50%, -50%) scale(1.08) translateY(-2px);
   border-color: rgba(240, 128, 80, 0.6);
   background: rgba(22, 22, 22, 0.9);
   box-shadow: 0 8px 25px rgba(240, 128, 80, 0.25), 0 0 15px rgba(240, 128, 80, 0.15);
 }
 
 .orbit-skill-pill.highlighted {
-  border-color: rgba(240, 128, 80, 0.7);
+  transform: translate(-50%, -50%) scale(1.05);
+  border-color: rgba(240, 128, 80, 0.75);
   box-shadow: 0 0 20px rgba(240, 128, 80, 0.25);
   background: rgba(20, 20, 20, 0.85);
 }
@@ -1387,6 +1396,15 @@ section {
    Responsive Breakpoints
    ========================================================================== */
 @media (max-width: 1024px) {
+  .skills-orbit-wrapper {
+    height: 510px;
+    min-height: 510px;
+  }
+
+  .skills-orbit-stage {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
   .section-heading {
     font-size: 2.8rem;
   }
@@ -1398,7 +1416,7 @@ section {
   
   .skills-main-row {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3.5rem;
   }
   
   .skills-left-col {
@@ -1503,14 +1521,29 @@ section {
     justify-content: center;
   }
   
-  .skills-main-title {
-    font-size: 2.8rem;
+  .skills-section {
+    padding: 4.5rem 1.25rem 3.5rem 1.25rem;
+  }
+
+  .skills-content-container {
+    gap: 3rem;
+  }
+
+  .skills-main-row {
+    gap: 2.5rem;
+  }
+
+  .skills-orbit-wrapper {
+    height: 420px;
+    min-height: 420px;
   }
 
   .skills-orbit-stage {
-    transform: scale(0.68);
-    transform-origin: center center;
-    margin: -75px auto -65px auto;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+
+  .skills-main-title {
+    font-size: 2.8rem;
   }
 
   .skills-category-list {
@@ -1546,9 +1579,29 @@ section {
 }
 
 @media (max-width: 480px) {
+  .skills-section {
+    padding: 3.5rem 0.75rem 2.8rem 0.75rem;
+  }
+
+  .skills-content-container {
+    gap: 2.2rem;
+  }
+
+  .skills-main-row {
+    gap: 1.8rem;
+  }
+
+  .skills-orbit-wrapper {
+    height: 335px;
+    min-height: 335px;
+  }
+
   .skills-orbit-stage {
-    transform: scale(0.53);
-    margin: -115px auto -95px auto;
+    transform: translate(-50%, -50%) scale(0.55);
+  }
+
+  .skills-main-title {
+    font-size: 2.3rem;
   }
 
   .panel-motto-col {
@@ -1578,5 +1631,31 @@ section {
   .panel-code-box {
     gap: 0.8rem;
     font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .skills-section {
+    padding: 3rem 0.5rem 2.4rem 0.5rem;
+  }
+
+  .skills-orbit-wrapper {
+    height: 295px;
+    min-height: 295px;
+  }
+
+  .skills-orbit-stage {
+    transform: translate(-50%, -50%) scale(0.49);
+  }
+}
+
+@media (max-width: 340px) {
+  .skills-orbit-wrapper {
+    height: 260px;
+    min-height: 260px;
+  }
+
+  .skills-orbit-stage {
+    transform: translate(-50%, -50%) scale(0.43);
   }
 }

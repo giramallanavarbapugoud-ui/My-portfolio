@@ -499,6 +499,7 @@ export default function App() {
                     <div 
                       key={skill.id} 
                       className={`orbit-skill-pill ${skill.className} ${isHighlighted ? 'highlighted' : ''}`}
+                      onClick={() => setActiveSkillCategory(skill.category)}
                     >
                       <span className="pill-icon">{skill.icon}</span>
                       <span className="pill-name">{skill.name}</span>
