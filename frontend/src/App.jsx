@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import RetroDesktop from './RetroDesktop';
 import { 
   GraduationCap, 
   MapPin, 
@@ -265,7 +266,8 @@ export default function App() {
   };
 
   return (
-    <div className="portfolio-app">
+    <RetroDesktop>
+      <div className="portfolio-app">
       {/* Global Header */}
       <header className="site-header">
         <div className="header-container">
@@ -824,5 +826,6 @@ export default function App() {
         <p>© {new Date().getFullYear()} Bapugoud Giramallanavar. All rights reserved.</p>
       </footer>
     </div>
+    </RetroDesktop>
   );
 }
