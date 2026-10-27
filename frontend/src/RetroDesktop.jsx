@@ -14,7 +14,6 @@ export default function RetroDesktop({ children }) {
   const desktopIconsRef = useRef(null);
   const taskbarRef = useRef(null);
   const windowContainerRef = useRef(null);
-  const cursorRef = useRef(null);
   const timelineRef = useRef(null);
 
   // Live Digital Clock
@@ -52,9 +51,6 @@ export default function RetroDesktop({ children }) {
     gsap.set(desktopIconsRef.current ? desktopIconsRef.current.children : [], { opacity: 0, y: 14 });
     gsap.set(taskbarRef.current, { y: '100%' });
     gsap.set(windowContainerRef.current, { opacity: 0, scale: 0.85, y: 25 });
-    if (cursorRef.current) {
-      gsap.set(cursorRef.current, { opacity: 0, x: 600, y: 400 });
-    }
 
     // --- Scene 1: Retro Desktop Appears (0.0s – 2.0s) ---
     // Staggered desktop icons reveal
@@ -93,18 +89,6 @@ export default function RetroDesktop({ children }) {
     // --- Scene 4: Buttons and Desktop Interaction (7.0s – 9.0s) ---
     tl.fromTo('.hero-cta-group', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 6.8);
 
-    if (cursorRef.current) {
-      // Cursor glides in towards desktop Photos icon
-      tl.to(cursorRef.current, { opacity: 1, duration: 0.2 }, 7.4)
-        .to(cursorRef.current, { x: 52, y: 110, duration: 0.9, ease: 'power2.inOut' }, 7.6)
-        // Click action: select Photos icon
-        .call(() => setSelectedIcon('photos'), null, 8.5)
-        .to(cursorRef.current, { scale: 0.92, duration: 0.1, yoyo: true, repeat: 1 }, 8.5)
-        // Cursor settles aside, unselect icon
-        .to(cursorRef.current, { x: 90, y: 150, opacity: 0.7, duration: 0.6, ease: 'power1.out' }, 8.9)
-        .call(() => setSelectedIcon(null), null, 9.2);
-    }
-
     // --- Scene 5: Ambient Hold (9.0s – 12.0s) ---
     // Steady state established
     tl.call(() => setIsAnimating(false), null, 10.0);
@@ -127,7 +111,6 @@ export default function RetroDesktop({ children }) {
     gsap.set(taskbarRef.current, { y: '0%' });
     gsap.set(windowContainerRef.current, { opacity: 1, scale: 1, y: 0 });
     gsap.set('.site-header, .hero-portrait-container, .hero-main-name, .hero-tagline-caps, .hero-support-text, .hero-cta-group', { opacity: 1, y: 0, x: 0, scale: 1 });
-    if (cursorRef.current) gsap.set(cursorRef.current, { opacity: 0 });
   };
 
   return (
@@ -187,21 +170,7 @@ export default function RetroDesktop({ children }) {
         </div>
       </div>
 
-      {/* --- Simulated Pixel Cursor for Cinematic Sequence --- */}
-      <svg 
-        className="retro-simulated-cursor" 
-        ref={cursorRef} 
-        viewBox="0 0 17 24" 
-        fill="none"
-      >
-        <path 
-          d="M0 0V22L5.5 16.5L9.5 24L12.5 22.5L8.5 15.5L15 15.5L0 0Z" 
-          fill="#FFFFFF" 
-          stroke="#000000" 
-          strokeWidth="1.5" 
-          strokeLinejoin="round"
-        />
-      </svg>
+
 
       {/* --- Main Application Window: Portfolio.exe --- */}
       <div 

@@ -492,15 +492,7 @@
   margin: 3px 2px;
 }
 
-/* --- Simulated Animated Mouse Cursor (Scene 4) --- */
-.retro-simulated-cursor {
-  position: fixed;
-  width: 17px;
-  height: 24px;
-  z-index: 99999;
-  pointer-events: none;
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
-}
+
 
 /* --- Responsive Adaptations for Mobile --- */
 @media (max-width: 768px) {
