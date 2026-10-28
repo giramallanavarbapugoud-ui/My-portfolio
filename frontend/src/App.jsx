@@ -735,7 +735,7 @@ export default function App() {
               </a>
 
               <a 
-                href="https://instagram.com/bapugoud_giramallanavar" 
+                href="https://www.instagram.com/bapugoud00/?hl=en" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="social-item"
@@ -745,7 +745,7 @@ export default function App() {
                 </div>
                 <div className="social-text">
                   <span className="social-name">Instagram</span>
-                  <span className="social-handle">@bapugoud_giramallanavar</span>
+                  <span className="social-handle">@bapugoud00</span>
                 </div>
               </a>
             </div>
